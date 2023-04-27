@@ -31,8 +31,8 @@ abstract class _WorkTimeStore with Store {
   @action
   void iniciar() {
     iniciado = true;
-    //cronometro = Timer.periodic(const Duration(seconds: 1), (timer) {
-    cronometro = Timer.periodic(const Duration(milliseconds: 10), (timer) {
+    cronometro = Timer.periodic(const Duration(seconds: 1), (timer) {
+      //cronometro = Timer.periodic(const Duration(milliseconds: 10), (timer) {
       //test
       if (minutos == 0 && segundos == 0) {
         _trocarTipoIntervalo();
