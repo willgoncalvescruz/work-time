@@ -12,13 +12,13 @@ abstract class _WorkTimeStore with Store {
   bool iniciado = false;
 
   @observable
-  int minutos = 30;
+  int minutos = 10;
 
   @observable
   int segundos = 0;
 
   @observable
-  int tempoTrabalho = 50;
+  int tempoTrabalho = 10;
 
   @observable
   int tempoDescanso = 10;
@@ -31,7 +31,9 @@ abstract class _WorkTimeStore with Store {
   @action
   void iniciar() {
     iniciado = true;
-    cronometro = Timer.periodic(const Duration(seconds: 1), (timer) {
+    //cronometro = Timer.periodic(const Duration(seconds: 1), (timer) {
+    cronometro = Timer.periodic(const Duration(milliseconds: 10), (timer) {
+      //test
       if (minutos == 0 && segundos == 0) {
         _trocarTipoIntervalo();
       } else if (segundos == 0) {
