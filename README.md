@@ -57,5 +57,4 @@ Segue abaixo mais detalhes de como tudo isso foi explorado.
 <img alt="1" title="#1" src="./assets/images/1.png" width="200"/>
 <img alt="2" title="#2" src="./assets/images/2.png" width="200"/>
 <img alt="3" title="#3" src="./assets/images/3.png" width="200"/>
-<img alt="3" title="#3" src="./assets/images/4.png" width="200"/>
 </h1>
