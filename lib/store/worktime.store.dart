@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:audio_helper/audio_helper.dart';
+import 'package:flutter/foundation.dart';
 import 'package:mobx/mobx.dart';
 part 'worktime.store.g.dart';
 //part 'worktime/store/worktime.store.g.dart';
@@ -30,6 +32,7 @@ abstract class _WorkTimeStore with Store {
 
   @action
   void iniciar() {
+    //play();
     iniciado = true;
     cronometro = Timer.periodic(const Duration(seconds: 1), (timer) {
       //cronometro = Timer.periodic(const Duration(milliseconds: 10), (timer) {
@@ -56,6 +59,7 @@ abstract class _WorkTimeStore with Store {
     parar();
     minutos = estaTrabalhando() ? tempoTrabalho : tempoDescanso;
     segundos = 0;
+    //iniciar();
   }
 
   @action
@@ -112,4 +116,14 @@ abstract class _WorkTimeStore with Store {
     }
     segundos = 0;
   }
+
+  // Future<void> play() async {
+  //   await AudioHelper.initial(
+  //     backgroundMusicNames: ['descanso.mp3'],
+  //   );
+  //   // AudioHelper.initial(
+  //   //   backgroundMusicNames: ['descanso.mp3'],
+  //   // );
+  //   //AudioHelper.playSound('descanso.mp3');
+  // }
 }

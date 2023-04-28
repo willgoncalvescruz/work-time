@@ -1,4 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:audio_helper/audio_helper.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:worktime/components/CronometroBotao.dart';
@@ -19,6 +21,7 @@ class Cronometro extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              //AudioHelper.playSound('descanso.mp3'),
               Container(
                 width: 200,
                 height: 200,
@@ -86,6 +89,15 @@ class Cronometro extends StatelessWidget {
     );
   }
 }
+
+
+//   final musica = await AudioHelper.initial(backgroundMusicNames: ['descanso.mp3'],);
+//  //Play
+//  AudioHelper.playMusic();
+//  //Stop
+//  AudioHelper.stopMusic();
+//  //Reproduzir Sim
+//  AudioHelper.playSound('descanso.mp3');
 
 
               // SizedBox(

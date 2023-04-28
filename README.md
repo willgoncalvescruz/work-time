@@ -5,7 +5,7 @@
 <p align="center">🚧  Flutter 🚀 Em construção...  🚧</p>
 <h1 align="center">
 <a href="https://pub.dev/"> Flutter</a></h1>
-<p align="center">🚀 Construção de componentes reutilizáveis (Routers, Bindings, Appbar, TextForms, Box, Buttons, Models)...</p>
+<p align="center">🚀 </p>
 <div>    
 
  
@@ -16,7 +16,7 @@
 <a href="#Features">Features</a> •
 <a href="#Bibliotecas">Features</a> •
 <a href="#Rodar">Rodar</a> • 
-<a href="#Observações">Rodar</a> •
+<a href="#Observacoes">Rodar</a> •
 <a href="#Telas">Telas</a> •  
 </p>
 
@@ -47,7 +47,7 @@ Segue abaixo mais detalhes de como tudo isso foi explorado.
 - [x] Baixar dependencias "Flutter pub get"
 - [x] Fazer Build "Flutter run"
 
-### Observações
+### Observacoes
 - [x] Caso queira ver todos os comandos do build_runner "flutter build_runner --help"
 - [x] Caso queira fazer Build para limpar arquivos gerado pelo provider "flutter build_runner clean"
 - [x] Caso queira fazer Build para gerar arquivos gerenciados pelo provider "flutter build_runner watch"
