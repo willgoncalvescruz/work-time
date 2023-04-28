@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         Colors.yellow,
         Colors.red,
       ],
-      backgroundColor: const Color.fromARGB(255, 45, 149, 201),
+      backgroundColor: Colors.blue,
     );
 
     return MultiProvider(
