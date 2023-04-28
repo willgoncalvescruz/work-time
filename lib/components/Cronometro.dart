@@ -17,14 +17,15 @@ class Cronometro extends StatelessWidget {
     return Observer(
       builder: (_) {
         return Container(
-          color: store.estaTrabalhando() ? Colors.orange : Colors.green,
+          color: store.estaTrabalhando() ? Colors.blue : Colors.green,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               //AudioHelper.playSound('descanso.mp3'),
+              const SizedBox(height: 20),
               Container(
-                width: 200,
-                height: 200,
+                width: 250,
+                height: 230,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   image: DecorationImage(
@@ -33,6 +34,7 @@ class Cronometro extends StatelessWidget {
                           : const AssetImage("assets/images/descanso.png")),
                 ),
               ),
+              const SizedBox(height: 10),
               Text(
                 store.estaTrabalhando()
                     ? 'Hora de Trabalhar'
@@ -42,7 +44,7 @@ class Cronometro extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Text(
                 '${store.minutos.toString().padLeft(2, '0')}:${store.segundos.toString().padLeft(2, '0')}',
                 style: const TextStyle(
@@ -51,37 +53,71 @@ class Cronometro extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (!store.iniciado)
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: CronometroBotao(
-                        texto: 'Iniciar',
-                        icone: Icons.play_arrow,
-                        click: store.iniciar,
-                      ),
+              store.estaTrabalhando()
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (!store.iniciado)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: CronometroBotaoTrabalho(
+                              texto: 'Iniciar',
+                              icone: Icons.play_arrow,
+                              click: store.iniciar,
+                            ),
+                          ),
+                        if (store.iniciado)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: CronometroBotaoTrabalho(
+                              texto: 'Parar',
+                              icone: Icons.stop,
+                              click: store.parar,
+                            ),
+                          ),
+                        if (store.iniciado)
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: CronometroBotaoTrabalho(
+                              texto: 'Reiniciar',
+                              icone: Icons.refresh,
+                              click: store.reiniciar,
+                            ),
+                          ),
+                      ],
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (!store.iniciado)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: CronometroBotaoDescanso(
+                              texto: 'Iniciar',
+                              icone: Icons.play_arrow,
+                              click: store.iniciar,
+                            ),
+                          ),
+                        if (store.iniciado)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: CronometroBotaoDescanso(
+                              texto: 'Parar',
+                              icone: Icons.stop,
+                              click: store.parar,
+                            ),
+                          ),
+                        if (store.iniciado)
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: CronometroBotaoDescanso(
+                              texto: 'Reiniciar',
+                              icone: Icons.refresh,
+                              click: store.reiniciar,
+                            ),
+                          ),
+                      ],
                     ),
-                  if (store.iniciado)
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: CronometroBotao(
-                        texto: 'Parar',
-                        icone: Icons.stop,
-                        click: store.parar,
-                      ),
-                    ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: CronometroBotao(
-                      texto: 'Reiniciar',
-                      icone: Icons.refresh,
-                      click: store.reiniciar,
-                    ),
-                  ),
-                ],
-              ),
             ],
           ),
         );
