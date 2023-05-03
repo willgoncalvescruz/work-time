@@ -105,3 +105,89 @@ class CronometroBotaoDescanso extends StatelessWidget {
     );
   }
 }
+
+class CronometroBotaoPlayMusic extends StatelessWidget {
+  final String texto;
+  final IconData icone;
+  final void Function()? click;
+
+  const CronometroBotaoPlayMusic({
+    required this.texto,
+    required this.icone,
+    this.click,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: click,
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      foregroundColor: Colors.white,
+      child: Container(
+        height: 100,
+        width: 100,
+        decoration: const BoxDecoration(
+          color: Color.fromARGB(209, 41, 162, 45),
+          borderRadius: BorderRadius.all(Radius.circular(50)),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(136, 46, 81, 0),
+              spreadRadius: 3,
+              blurRadius: 3,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        child: const Icon(
+          //Icons.play_circle_filled_sharp,
+          Icons.volume_up_rounded,
+          size: 35,
+        ),
+      ),
+    );
+  }
+}
+
+class CronometroBotaoStopMusic extends StatelessWidget {
+  final String texto;
+  final IconData icone;
+  final void Function()? click;
+
+  const CronometroBotaoStopMusic({
+    required this.texto,
+    required this.icone,
+    this.click,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: click,
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      foregroundColor: Colors.white,
+      child: Container(
+        height: 100,
+        width: 100,
+        decoration: const BoxDecoration(
+          color: Color.fromARGB(209, 154, 158, 154),
+          borderRadius: BorderRadius.all(Radius.circular(50)),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(136, 46, 81, 0),
+              spreadRadius: 3,
+              blurRadius: 3,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        child: const Icon(
+          //Icons.stop_circle_sharp,
+          Icons.volume_off_rounded,
+          size: 35,
+        ),
+      ),
+    );
+  }
+}

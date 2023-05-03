@@ -19,8 +19,15 @@ class WorkTime extends StatelessWidget {
           const Expanded(
             child: Cronometro(),
           ),
+          const SizedBox(
+            height: 10,
+            child: DecoratedBox(
+                decoration:
+                    BoxDecoration(color: Color.fromARGB(212, 90, 90, 90))),
+            // child: Container()
+          ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 40),
+            padding: const EdgeInsets.only(top: 30, bottom: 50),
             child: Observer(
               builder: (_) => Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

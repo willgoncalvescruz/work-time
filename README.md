@@ -27,13 +27,13 @@
 
  
 ## Experiencia
-Com este projeto reforcei conceitos de padrão reativo, e prátiquei o seu uso com "MobX" que um dos mais utilizados gerenciadores de estado para uso no Flutter, aprendi mais sobre co uso do "provider" como gerenciador de arquivos.
+Com este projeto reforcei conceitos de padrão reativo, e prátiquei o seu uso com "MobX" que um dos mais utilizados gerenciadores de estado para uso no Flutter, aprendi mais sobre o uso do "provider" como gerador e gerenciador de arquivos.
 Segue abaixo mais detalhes de como tudo isso foi explorado.
 ### Features
 - [x] Indique o seu tempo de trabalho 
 - [x] Regule seus intervalos
-- [x] Reinicie o processo
-- [x] Relaxe no intervalo com uma boa música
+- [x] Reinicie o processo quando quiser
+- [x] Relaxe no seu momento de descanso com uma boa música
 
 ### Bibliotecas
 - [x] mobx: ^2.1.3
@@ -57,4 +57,5 @@ Segue abaixo mais detalhes de como tudo isso foi explorado.
 <img alt="1" title="#1" src="./assets/images/1.png" width="200"/>
 <img alt="2" title="#2" src="./assets/images/2.png" width="200"/>
 <img alt="3" title="#3" src="./assets/images/3.png" width="200"/>
+<img alt="3" title="#4" src="./assets/images/4.png" width="200"/>
 </h1>

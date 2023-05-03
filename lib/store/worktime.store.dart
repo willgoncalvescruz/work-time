@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:audio_helper/audio_helper.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
 import 'package:mobx/mobx.dart';
+import 'package:worktime/components/Cronometro.dart';
 part 'worktime.store.g.dart';
 //part 'worktime/store/worktime.store.g.dart';
 
@@ -30,13 +32,19 @@ abstract class _WorkTimeStore with Store {
 
   Timer? cronometro;
 
+  @observable
+  bool musicainiciada = false;
+
+  @observable
+  get playerPlay => playMusicDescanso();
+  @observable
+  get playerStop => stopMusicDescanso();
+
   @action
   void iniciar() {
-    //play();
     iniciado = true;
-    cronometro = Timer.periodic(const Duration(seconds: 1), (timer) {
-      //cronometro = Timer.periodic(const Duration(milliseconds: 10), (timer) {
-      //test
+    //cronometro = Timer.periodic(const Duration(seconds: 1), (timer) {
+    cronometro = Timer.periodic(const Duration(milliseconds: 10), (timer) {
       if (minutos == 0 && segundos == 0) {
         _trocarTipoIntervalo();
       } else if (segundos == 0) {
@@ -59,7 +67,22 @@ abstract class _WorkTimeStore with Store {
     parar();
     minutos = estaTrabalhando() ? tempoTrabalho : tempoDescanso;
     segundos = 0;
-    //iniciar();
+  }
+
+  @action
+  Future<dynamic> iniciarmusica() async {
+    if (estaDescansando()) {
+      musicainiciada = true;
+      playerPlay();
+    }
+  }
+
+  @action
+  Future<dynamic> pararmusica() async {
+    if (estaDescansando()) {
+      musicainiciada = false;
+      playerStop;
+    }
   }
 
   @action
@@ -116,14 +139,4 @@ abstract class _WorkTimeStore with Store {
     }
     segundos = 0;
   }
-
-  // Future<void> play() async {
-  //   await AudioHelper.initial(
-  //     backgroundMusicNames: ['descanso.mp3'],
-  //   );
-  //   // AudioHelper.initial(
-  //   //   backgroundMusicNames: ['descanso.mp3'],
-  //   // );
-  //   //AudioHelper.playSound('descanso.mp3');
-  // }
 }

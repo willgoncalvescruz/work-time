@@ -1,5 +1,3 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:audio_helper/audio_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:provider/provider.dart';
@@ -15,25 +13,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget home = SplashScreenView(
-      navigateRoute: const WorkTime(),
-      duration: 4000,
-      imageSize: 150,
-      imageSrc: "assets/images/logo.png",
-      text: "Work Time",
-//textType: TextType.ColorizeAnimationText,
-      textType: TextType.ScaleAnimatedText,
-      textStyle: const TextStyle(
-        fontSize: 50.0,
+    Widget home = Container(
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+        colors: [
+          Color.fromARGB(255, 1, 108, 249),
+          Color.fromARGB(255, 108, 163, 250),
+          Color.fromARGB(255, 108, 163, 250),
+          Color.fromARGB(255, 1, 108, 249),
+        ],
+      )),
+      child: SplashScreenView(
+        navigateRoute: const WorkTime(),
+        duration: 2500,
+        imageSize: 150,
+        imageSrc: "assets/images/logo.png",
+        text: "Work Time",
+        //textType: TextType.ColorizeAnimationText,
+        textType: TextType.ScaleAnimatedText,
+        textStyle: const TextStyle(
+          fontSize: 50.0,
+        ),
+        backgroundColor: Colors.transparent,
       ),
-
-      colors: const [
-        Colors.purple,
-        Colors.blue,
-        Colors.yellow,
-        Colors.red,
-      ],
-      backgroundColor: Colors.blue,
     );
 
     return MultiProvider(
@@ -67,7 +71,6 @@ class MyApp extends StatelessWidget {
 //     return const Placeholder();
 //   }
 // }
-
 
         // AnimatedSplashScreen(
         //   duration: 4000,

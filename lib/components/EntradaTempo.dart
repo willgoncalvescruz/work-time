@@ -42,8 +42,9 @@ class EntradaTempo extends StatelessWidget {
                     store.estaTrabalhando() ? Colors.red : Colors.green,
               ),
               child: const Icon(
-                Icons.arrow_downward,
+                Icons.arrow_downward_rounded,
                 color: Colors.white,
+                size: 20,
               ),
             ),
             Text(
@@ -61,8 +62,9 @@ class EntradaTempo extends StatelessWidget {
                     store.estaTrabalhando() ? Colors.red : Colors.green,
               ),
               child: const Icon(
-                Icons.arrow_upward,
+                Icons.arrow_upward_rounded,
                 color: Colors.white,
+                size: 30,
               ),
             ),
           ],
