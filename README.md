@@ -41,6 +41,7 @@ Segue abaixo mais detalhes de como tudo isso foi explorado.
 - [x] provider: ^6.0.4
 - [x] splash_screen_view: ^3.0.0
 - [x] animated_splash_screen: ^1.3.0
+- [x] audioplayers: ^4.0.1
 
 ### Rodar
 - [x] Fazer Clone do Projeto

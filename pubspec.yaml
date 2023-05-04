@@ -40,7 +40,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   splash_screen_view: ^3.0.0
   animated_splash_screen: ^1.3.0
-  audio_helper: ^0.0.3
   audioplayers: ^4.0.1
 
 dev_dependencies:
