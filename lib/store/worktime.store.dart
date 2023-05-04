@@ -43,8 +43,8 @@ abstract class _WorkTimeStore with Store {
   @action
   void iniciar() {
     iniciado = true;
-    //cronometro = Timer.periodic(const Duration(seconds: 1), (timer) {
-    cronometro = Timer.periodic(const Duration(milliseconds: 10), (timer) {
+    cronometro = Timer.periodic(const Duration(seconds: 1), (timer) {
+      //cronometro = Timer.periodic(const Duration(milliseconds: 10), (timer) {
       if (minutos == 0 && segundos == 0) {
         _trocarTipoIntervalo();
       } else if (segundos == 0) {
@@ -81,7 +81,7 @@ abstract class _WorkTimeStore with Store {
   Future<dynamic> pararmusica() async {
     if (estaDescansando()) {
       musicainiciada = false;
-      playerStop;
+      playerStop();
     }
   }
 
